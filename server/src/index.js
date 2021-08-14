@@ -8,6 +8,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   const content = renderToString(<Home />);
+  console.log('content==', content);
   res.send(content);
 });
 

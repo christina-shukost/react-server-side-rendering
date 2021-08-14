@@ -1,5 +1,6 @@
-##Server Side Rendering with React and Redux
-######Author: Stephen Grider
+## Server Side Rendering with React and Redux
+
+###### Author: Stephen Grider
 
 Build React, Redux, and React Router apps using Server Side Rendering (SSR), Isomorphic, and Universal JS techniques
 
