@@ -5,14 +5,13 @@ import proxy from 'express-http-proxy';
 import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
-
-const ROOT_URL = 'https://react-ssr-api.herokuapp.com';
+import { API_URL } from './client/constants';
 
 const app = express();
 
 app.use(
   '/api',
-  proxy(ROOT_URL, {
+  proxy(API_URL, {
     proxyReqOptDecorator(opts) {
       opts.headers['x-forwarded-host'] = 'localhost:3000';
       return opts;
