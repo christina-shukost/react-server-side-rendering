@@ -40,6 +40,9 @@ app.get('*', (req, res) => {
       const context = {};
       const content = renderer(req, store, context);
 
+      if (context.url) {
+        return res.redirect(301, context.url);
+      }
       if(context.notFound) {
         res.status(404);
       }
@@ -47,7 +50,7 @@ app.get('*', (req, res) => {
       res.send(content);
     }).catch(() => {
       res.send('Something went wrong');
-  });
+    });
 });
 
 app.listen(3000, () => {
